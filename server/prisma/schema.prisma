@@ -47,6 +47,8 @@ model User {
 
   participatingAt Participant[]
   ownPools        Pool[]
+
+  @@map("users")
 }
 
 model Game {
@@ -57,6 +59,8 @@ model Game {
   secondTeamCountryCode String
 
   guesses Guess[]
+
+  @@map("games")
 }
 
 model Guess {
@@ -70,4 +74,6 @@ model Guess {
 
   participant Participant @relation(fields: [participantId], references: [id])
   game        Game        @relation(fields: [gameId], references: [id])
+
+  @@map("guesses")
 }
