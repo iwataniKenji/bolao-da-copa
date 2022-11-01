@@ -17,7 +17,6 @@ async function bootstrap() {
     origin: true, // qualquer aplicação pode acessar a API
   });
 
-  // rota get
   fastify.get("/pools/count", async () => {
     // prisma tem autocomplete das tabelas criadas
     const count = await prisma.pool.count();
@@ -25,7 +24,18 @@ async function bootstrap() {
     return { count };
   });
 
-  // rota post
+  fastify.get("/users/count", async () => {
+    const count = await prisma.user.count();
+
+    return { count };
+  });
+
+  fastify.get("/guesses/count", async () => {
+    const count = await prisma.guess.count();
+
+    return { count };
+  });
+
   fastify.post("/pools", async (request, reply) => {
     // validação
     const createPoolBody = z.object({
