@@ -123,7 +123,7 @@ export const getStaticProps = async () => {
       guessCount: guessCountResponse.data.count,
       userCount: userCountResponse.data.count,
     },
-    revalidate: 60 * 10,
+    revalidate: 60 * 10, // 10 minutos
   };
 };
 
