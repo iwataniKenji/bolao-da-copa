@@ -108,8 +108,8 @@ export default function Home(props: HomeProps) {
   );
 }
 
-export const getServerSideProps = async () => {
-  // executa promises em paralelo
+// pre renderiza página a cada 10 minutos
+export const getStaticProps = async () => {
   const [poolCountResponse, guessCountResponse, userCountResponse] =
     await Promise.all([
       api.get("pools/count"),
@@ -123,5 +123,25 @@ export const getServerSideProps = async () => {
       guessCount: guessCountResponse.data.count,
       userCount: userCountResponse.data.count,
     },
+    revalidate: 60 * 10,
   };
 };
+
+// pre renderiza página a cada requisição feita
+// export const getServerSideProps = async () => {
+//   // executa promises em paralelo
+//   const [poolCountResponse, guessCountResponse, userCountResponse] =
+//     await Promise.all([
+//       api.get("pools/count"),
+//       api.get("guesses/count"),
+//       api.get("users/count"),
+//     ]);
+
+//   return {
+//     props: {
+//       poolCount: poolCountResponse.data.count,
+//       guessCount: guessCountResponse.data.count,
+//       userCount: userCountResponse.data.count,
+//     },
+//   };
+// };
