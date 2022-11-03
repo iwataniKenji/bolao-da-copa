@@ -99,15 +99,14 @@ $ npm expo start
 
 <H2 id="features">💡 Features</H2>
 
-- [x] Declarative interface with Tailwind
-- [x] Full integration between backend and frontend (web/mobile)
+- [x] Google account based authentication system
+- [x] Context usage and data persistence
+- [x] Full integration between backend and web/mobile
+- [x] Declarative interface with Tailwind on web application
 - [x] Mobile version developed with React Native
-<!-- - [x] Accessibility for "keyboard only" users -->
-<!-- - [x] Communication between components through props -->
-<!-- - [x] Loading spinner -->
-<!-- - [x] Gesture on mobile version -->
-<!-- - [x] Mailtrap to receive and check the information from input sending -->
-<!-- - [x] Test automation with Jest -->
+  <!-- - [x] Gesture on mobile version -->
+  <!-- - [x] Mailtrap to receive and check the information from input sending -->
+  <!-- - [x] Test automation with Jest -->
 
 ---
 
@@ -126,6 +125,7 @@ $ npm expo start
 - [x] <a href="https://reactnative.dev/">React Native</a>
 - [x] <a href="https://expo.dev/">Expo</a>
 - [x] <a href="https://nativebase.io/">Native Base</a>
+- [x] <a href="https://phosphoricons.com/">Phosphor Icons</a>
 
 <h4>Backend and Deployment</h4>
 
