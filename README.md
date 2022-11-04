@@ -100,6 +100,7 @@ $ npm expo start
 <H2 id="features">💡 Features</H2>
 
 - [x] Google account based authentication system
+- [x] Jwt token authentication
 - [x] Context usage and data persistence
 - [x] Full integration between backend and web/mobile
 - [x] Declarative interface with Tailwind on web application
@@ -133,3 +134,4 @@ $ npm expo start
 - [x] <a href="https://www.fastify.io/">Fastify</a>
 - [x] <a href="https://www.prisma.io/">Prisma</a>
 - [x] <a href="https://insomnia.rest/">Insomnia</a>
+- [x] <a href="https://jwt.io/">Jwt</a>
