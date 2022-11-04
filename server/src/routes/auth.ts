@@ -51,12 +51,22 @@ export async function authRoutes(fastify: FastifyInstance) {
           name: userInfo.name,
           email: userInfo.email,
           avatarUrl: userInfo.picture,
-        }
-      }
+        },
+      });
     }
 
-    //g
+    // cria token jwt
+    const token = fastify.jwt.sign(
+      {
+        name: user.name,
+        avatarUrl: user.avatarUrl,
+      },
+      {
+        sub: user.id, // quem gerou o token
+        expiresIn: "7 days",
+      }
+    );
 
-    return { userInfo };
+    return { token };
   });
 }

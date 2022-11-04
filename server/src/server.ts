@@ -1,5 +1,7 @@
 import Fastify from "fastify";
 import cors from "@fastify/cors";
+import jwt from "@fastify/jwt";
+
 import { poolRoutes } from "./routes/pool";
 import { authRoutes } from "./routes/auth";
 import { gameRoutes } from "./routes/game";
@@ -14,6 +16,11 @@ async function bootstrap() {
   await fastify.register(cors, {
     origin: true, // qualquer aplicação pode acessar a API
   });
+
+  // em produção, secret deve ser uma variável ambiente
+  await fastify.register(jwt, {
+    secret: "nlw-copa"
+  })
 
   // deixa rotas funcionais
   await fastify.register(poolRoutes);
