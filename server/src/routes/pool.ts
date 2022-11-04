@@ -112,4 +112,47 @@ export async function poolRoutes(fastify: FastifyInstance) {
       return reply.status(201).send();
     }
   );
+
+  // lista todos os bolões que o usuário está participando
+  fastify.get("/pools", { onRequest: [authenticate] }, async (request) => {
+    const pools = await prisma.pool.findMany({
+      where: {
+        // onde, pelo menos um participante, tem o id do usuário logado
+        participants: {
+          some: {
+            userId: request.user.sub,
+          },
+        },
+      },
+      include: {
+        // faz contagem do relacionamento de participantes
+        _count: {
+          select: {
+            participants: true,
+          },
+        },
+        participants: {
+          select: {
+            id: true,
+
+            // pega dados da tabela de relacionamento
+            user: {
+              select: {
+                avatarUrl: true,
+              },
+            },
+          },
+          take: 4,
+        },
+        owner: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
+    });
+
+    return { pools };
+  });
 }
