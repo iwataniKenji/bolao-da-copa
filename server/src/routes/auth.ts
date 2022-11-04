@@ -1,10 +1,17 @@
 import { FastifyInstance } from "fastify";
 import { z } from "zod";
 import { prisma } from "../lib/prisma";
+import { authenticate } from "../plugins/authenticate";
 
 import fetch from "node-fetch";
 
+// plugin ou middleware -> função que roda antes da rota
 export async function authRoutes(fastify: FastifyInstance) {
+  fastify.get("/me", { onRequest: [authenticate] }, async (request) => {
+    // retorna apenas se token for validado
+    return { user: request.user };
+  });
+
   fastify.post("/users", async (request) => {
     const createUserBody = z.object({
       access_token: z.string(),
