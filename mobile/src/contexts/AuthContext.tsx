@@ -31,7 +31,7 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
 
   // promptAsync -> abre o navegador para autenticação
   const [request, response, promptAsync] = Google.useAuthRequest({
-    clientId: "pipoca-quente-na-manteiga",
+    clientId: process.env.CLIENT_ID,
     redirectUri: AuthSession.makeRedirectUri({ useProxy: true }),
     scopes: ["profile", "email"], // dados que deseja acessar
   });
