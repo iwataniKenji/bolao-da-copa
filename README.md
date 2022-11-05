@@ -38,11 +38,11 @@
     <img alt="web project overview" src="./assets/web-preview.gif"/>
 </section>
 
-<!-- <h4>Mobile overview:</h4>
+<h4>Mobile overview:</h4>
 
 <section align="center">
-    <img alt="mobile project overview" src="./assets/mobile-preview.gif"/>
-</section> -->
+    <img alt="mobile project overview" src="./assets/mobile-preview.mp4"/>
+</section>
 
 ---
 
