@@ -28,7 +28,7 @@ export function New() {
 
       await api.post("/pools", {
         title,
-      });
+      }); 
 
       toast.show({
         title: "Bolão criado com sucesso!",
