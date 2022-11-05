@@ -2,6 +2,7 @@ import { createContext, ReactNode, useState, useEffect } from "react";
 import * as Google from "expo-auth-session/providers/google";
 import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
+import { api } from "../services/api";
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -30,7 +31,7 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
 
   // promptAsync -> abre o navegador para autenticação
   const [request, response, promptAsync] = Google.useAuthRequest({
-    clientId: "inserir_codigo_anotado.com",
+    clientId: "pipoca-quente-na-manteiga",
     redirectUri: AuthSession.makeRedirectUri({ useProxy: true }),
     scopes: ["profile", "email"], // dados que deseja acessar
   });
@@ -49,9 +50,27 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
     }
   }
 
-  // imprime o token após sucesso no login
   async function signInWithGoogle(access_token: string) {
-    console.log("Token de autenticação: ", access_token);
+    try {
+      setIsUserLoading(true);
+
+      // pega token da autenticação do google
+      const tokenResponse = await api.post("/users", { access_token });
+
+      // insere token no header de todas as requisições
+      api.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${tokenResponse.data.token}`;
+
+      const userInfoResponse = await api.get("/me");
+
+      setUser(userInfoResponse.data.user);
+    } catch (error) {
+      console.log(error);
+      throw error;
+    } finally {
+      setIsUserLoading(false);
+    }
   }
 
   useEffect(() => {

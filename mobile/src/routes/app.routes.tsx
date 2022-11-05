@@ -3,6 +3,7 @@ import { useTheme } from "native-base";
 import { Platform } from "react-native";
 import { New } from "../screens/New";
 import { Pools } from "../screens/Pools";
+import { Find } from "../screens/Find";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -50,6 +51,13 @@ export function AppRoutes() {
             <SoccerBall color={color} size={iconSize} />
           ),
           tabBarLabel: "Meus bolões",
+        }}
+      />
+      <Screen
+        name="find"
+        component={Find}
+        options={{
+          tabBarButton: () => null,
         }}
       />
     </Navigator>
