@@ -6,31 +6,42 @@
 
 <p align="center">
     <a href="#about">📙 About</a>
-    <!-- <a href="#preview">🖼️ Preview</a> -->
+    <a href="#preview">🖼️ Preview</a>
     <a href="#start">📖 How to Start</a>
     <a href="#features">💡 Features</a>
     <a href="#technologies">💻 Technologies</a>
 </p>
 
 <h4 align="center">
-   🚧 Nlw Copa project in progress 🚧
+   ✔️ Bolão da Copa finished ✔️
 </h4>
 
 <h2 id="about">📙 About</H2>
 
-<!-- <p><strong>Nlw Copa</strong> is a useful widget to implement on any application that needs a support area with submit forms. The main feature is that it allows the user to insert the screenshot of the error screen at the moment and send it with the form text when submitted. In addiction, this app is totally well planned for accessibility as well.</p>
-<p>The <strong>Next Level Week</strong> is a whole week coding event based on the development of a complete application using some of the most used tools available on the JavaScript Stack, such as Tailwind, React and React Native. The purpose is all about keep learning, sharing the challenges with other student, making networking and improving on your hard and soft skills.</p> -->
+<p><strong>Bolão da Copa</strong> from Next Level Week is designed for those who loves soccer and want to use a platform that allows the participant to create your own guesses about the World Cup 2022 games results. This application is usable on smartphone devices and has a single page layout available on browsers to display introductory information about this tool.
+<p>Talking about the features, this app has full backend-mobile-web integration, jwt with google authentication system, routing functionality, organized code architecture and more</p>
+<p>The <strong>Next Level Week</strong> is a whole week coding event based on the development of a complete application using some of the most used tools available on the JavaScript Stack, such as Tailwind, React, NodeJS and React Native. The purpose is all about keep learning, sharing the challenges with other students, making networking and improving your hard and soft skills.</p>
+
 <!-- <p>This project used <a href="https://vercel.com/">Vercel</a> and <a href="https://heroku.com">Heroku</a> for deployment.</p> -->
+
 <p>Originally created on Next Level Week from <a href="https://www.rocketseat.com.br/">Rocketseat</a> and made by <a href="https://www.linkedin.com/in/kleverson-kenji-iwatani/">Kenji Iwatani</a></p>
 
 <!-- <h3><a href="https://feedget-kenji.vercel.app/">Check website &rarr;</a></h3> -->
 
 ---
 
-<!-- <H2 id="preview">🖼️ Preview</H2>
+<H2 id="preview">🖼️ Preview</H2>
+
+<h4>Web overview:</h4>
 
 <section align="center">
-    <img alt="feedget project overview" src="./assets/preview.gif"/>
+    <img alt="web project overview" src="./assets/web-preview.gif"/>
+</section>
+
+<!-- <h4>Mobile overview:</h4>
+
+<section align="center">
+    <img alt="mobile project overview" src="./assets/mobile-preview.gif"/>
 </section> -->
 
 ---
@@ -41,10 +52,10 @@
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/iwataniKenji/nlw-copa
+$ git clone https://github.com/iwataniKenji/bolao-da-copa
 
 # Access the project directory
-$ cd nlw-copa
+$ cd bolao-da-copa
 ```
 
 <h4>Server</h4>
@@ -56,8 +67,8 @@ $ cd server
 # Install dependencies
 $ npm install
 
-# # Rename '.env.example' to '.env' and set your env variables
-# $ ren ".env.example" ".env"
+# Rename '.env.example' to '.env' and set your env variable
+$ ren ".env.example" ".env"
 
 # With a PostgreSQL running, run the migrations
 $ npx prisma migrate dev
@@ -75,9 +86,6 @@ $ cd web
 # Install dependencies
 $ npm install
 
-# # Make a copy of '.env.local.example' to '.env.local'
-# $ ren ".env.example" ".env.local"
-
 # Start the application
 $ npm run dev
 ```
@@ -93,6 +101,8 @@ $ npm install
 
 # Start bundle
 $ npm expo start
+
+# Download expo app on your phone and scan the QR Code
 ```
 
 ---
@@ -105,9 +115,7 @@ $ npm expo start
 - [x] Routing feature on mobile version
 - [x] Full integration between backend and web/mobile
 - [x] Declarative interface with Tailwind on web application
-  <!-- - [x] Gesture on mobile version -->
-  <!-- - [x] Mailtrap to receive and check the information from input sending -->
-  <!-- - [x] Test automation with Jest -->
+- [x] Share poll code feature
 
 ---
 
