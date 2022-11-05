@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Icon, useToast, VStack, FlatList } from "native-base";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
+import { Octicons } from "@expo/vector-icons";
+
 import { Button } from "../components/Button";
 import { Header } from "../components/Header";
-import { Octicons } from "@expo/vector-icons";
 import { PoolCard, PoolCardProps } from "../components/PoolCard";
 import { Loading } from "../components/Loading";
 import { EmptyPoolList } from "../components/EmptyPoolList";
@@ -37,9 +38,12 @@ export function Pools() {
     }
   }
 
-  useEffect(() => {
-    fetchPools();
-  }, []);
+  // executa sempre que interface receber foco de volta
+  useFocusEffect(
+    useCallback(() => {
+      fetchPools();
+    }, [])
+  );
 
   return (
     <VStack flex={1} bgColor="gray.900">
