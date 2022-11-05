@@ -41,7 +41,7 @@
 <h4>Mobile overview:</h4>
 
 <section align="center">
-    <img alt="mobile project overview" src="./assets/mobile-preview.mp4"/>
+    <img alt="mobile project overview" src="./assets/mobile-preview.gif"/>
 </section>
 
 ---
