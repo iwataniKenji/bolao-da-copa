@@ -102,9 +102,9 @@ $ npm expo start
 - [x] Google account based authentication system
 - [x] Jwt token authentication
 - [x] Context usage and data persistence
+- [x] Routing feature on mobile version
 - [x] Full integration between backend and web/mobile
 - [x] Declarative interface with Tailwind on web application
-- [x] Mobile version developed with React Native
   <!-- - [x] Gesture on mobile version -->
   <!-- - [x] Mailtrap to receive and check the information from input sending -->
   <!-- - [x] Test automation with Jest -->
