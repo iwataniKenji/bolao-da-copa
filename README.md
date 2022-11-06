@@ -121,14 +121,6 @@ $ npm expo start
 
 <H2 id="technologies">💻 Technologies</H2>
 
-<h4>Frontend</h4>
-
-- [x] <a href="https://nextjs.org/">NextJS</a>
-- [x] <a href="https://www.typescriptlang.org/">Typescript</a>
-- [x] <a href="https://tailwindcss.com/">Tailwindcss</a>
-- [x] <a href="https://github.com/colinhacks/zod">Zod</a>
-- [x] <a href="https://axios-http.com/">Axios</a>
-
 <h4>Mobile</h4>
 
 - [x] <a href="https://reactnative.dev/">React Native</a>
@@ -143,3 +135,11 @@ $ npm expo start
 - [x] <a href="https://www.prisma.io/">Prisma</a>
 - [x] <a href="https://insomnia.rest/">Insomnia</a>
 - [x] <a href="https://jwt.io/">Jwt</a>
+
+<h4>Frontend</h4>
+
+- [x] <a href="https://nextjs.org/">NextJS</a>
+- [x] <a href="https://www.typescriptlang.org/">Typescript</a>
+- [x] <a href="https://tailwindcss.com/">Tailwindcss</a>
+- [x] <a href="https://github.com/colinhacks/zod">Zod</a>
+- [x] <a href="https://axios-http.com/">Axios</a>
